@@ -14,21 +14,21 @@ export class TodoService {
 
   // READ ALL
   async findAll() {
-    return this.prisma.todo.findMany({ orderBy: { createdAt: 'desc' } });
+    return this.prisma.todo.findMany({ orderBy: { createAt: 'desc' } });
   }
 
   // READ ONE
-  async findOne(id: number) {
+  async findOne(id: string) {
     return this.prisma.todo.findUnique({ where: { id } });
   }
 
   // UPDATE
-  async update(id: number, dto: UpdateTodoDto) {
+  async update(id: string, dto: UpdateTodoDto) {
     return this.prisma.todo.update({ where: { id }, data: dto });
   }
 
   // DELETE
-  async remove(id: number) {
+  async remove(id: string) {
     return this.prisma.todo.delete({ where: { id } });
   }
 }
