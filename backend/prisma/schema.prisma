@@ -10,9 +10,9 @@ datasource db {
 }
 
 model Todo {
- id     String @id @default(uuid())
- todo   String 
+ id         String @id @default(uuid())
+ todo       String 
  isComplete Boolean @default(false)
- createAt DateTime @default(now())
- updateAt DateTime @updatedAt
+ createAt   DateTime @default(now())
+ updateAt   DateTime @updatedAt
 }
